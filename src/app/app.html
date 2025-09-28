@@ -1,111 +1,35 @@
-<H1>Hello World</H1>
+<mat-sidenav-container class="app-sidenav-container">
+	<mat-sidenav #drawer class="app-sidenav" mode="side">
+		<mat-nav-list color="primary">
+			<a mat-list-item href="#homework">Liste des devoirs</a>
+			<a mat-list-item href="#add-homework">Ajout d'un devoir</a>
+			<a mat-list-item href="#edit-homework">Modification d'un devoir</a>
+			<a mat-list-item href="#delete-homework">Suppression d'un devoir</a>
+			<a mat-list-item href="#generate-test-data">Génération de données de test</a>
+		</mat-nav-list>
+	</mat-sidenav>
 
-<button mat-button>Click</button>
+	<mat-sidenav-content>
+		<mat-toolbar color="primary" class="app-toolbar">
+					<button mat-icon-button (click)="toggleDrawer()" color="primary" aria-label="Toggle sidenav">
+				<mat-icon>menu</mat-icon>
+			</button>
+					<a mat-icon-button href="#" aria-label="Home button" color="primary" style="margin-left:8px">
+						<mat-icon>home</mat-icon>
+					</a>
+			<span style="flex:1 1 auto; margin-left:12px">Mon Application</span>
+					<a mat-icon-button href="#login" color="primary" aria-label="Login">
+						<mat-icon>account_circle</mat-icon>
+					</a>
+		</mat-toolbar>
 
-<section>
-  <div class="example-label">Basic</div>
-  <div class="example-button-row">
-    <button mat-button>Basic</button>
-    <button mat-button color="primary">Primary</button>
-    <button mat-button color="accent">Accent</button>
-    <button mat-button color="warn">Warn</button>
-    <button mat-button disabled>Disabled</button>
-    <a mat-button color="link" href="https://www.google.com/" target="_blank">Link</a>
-  </div>
-</section>
-<mat-divider/>
-<section>
-  <div class="example-label">Elevated</div>
-  <div class="example-button-row">
-    <button mat-button>Basic</button>
-    <button mat-button color="primary">Primary</button>
-    <button mat-button color="accent">Accent</button>
-    <button mat-button color="warn">Warn</button>
-    <button mat-button disabled>Disabled</button>
-    <a mat-button color="link" href="https://www.google.com/" target="_blank">Link</a>
-  </div>
-</section>
-<mat-divider/>
-<section>
-  <div class="example-label">Outlined</div>
-  <div class="example-button-row">
-    <button mat-button>Basic</button>
-    <button mat-button color="primary">Primary</button>
-    <button mat-button color="accent">Accent</button>
-    <button mat-button color="warn">Warn</button>
-    <button mat-button disabled>Disabled</button>
-    <a mat-button color="link" href="https://www.google.com/" target="_blank">Link</a>
-  </div>
-</section>
-<mat-divider/>
-<section>
-  <div class="example-label">Filled</div>
-    <button mat-button>Basic</button>
-    <button mat-button color="primary">Primary</button>
-    <button mat-button color="accent">Accent</button>
-    <button mat-button color="warn">Warn</button>
-    <button mat-button disabled>Disabled</button>
-    <a mat-button color="link" href="https://www.google.com/" target="_blank">Link</a>
-</section>
-<mat-divider/>
-<section>
-  <div class="example-label">Icon</div>
-  <div class="example-button-row">
-    <div class="example-flex-container">
-      <button matIconButton aria-label="Example icon button with a vertical three dot icon">
-        <mat-icon>more_vert</mat-icon>
-      </button>
-      <button matIconButton disabled aria-label="Example icon button with a open in new tab icon">
-        <mat-icon>open_in_new</mat-icon>
-      </button>
-    </div>
-  </div>
-</section>
-<mat-divider/>
-<section>
-  <div class="example-label">Floating Action Button (FAB)</div>
-  <div class="example-button-row">
-    <div class="example-flex-container">
-      <button matFab aria-label="Example icon button with a delete icon">
-        <mat-icon>delete</mat-icon>
-      </button>
-      <button matFab disabled aria-label="Example icon button with a heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-    </div>
-  </div>
-</section>
-<mat-divider/>
-<section>
-  <div class="example-label">Mini FAB</div>
-  <div class="example-button-row">
-    <div class="example-flex-container">
-      <button matMiniFab aria-label="Example icon button with a menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <button matMiniFab disabled aria-label="Example icon button with a home icon">
-        <mat-icon>home</mat-icon>
-      </button>
-    </div>
-  </div>
-</section>
-<mat-divider/>
-<section>
-  <div class="example-label">Extended FAB</div>
-  <div class="example-button-row">
-    <div class="example-flex-container">
-      <button matFab extended>
-        <mat-icon>favorite</mat-icon>
-        Basic
-      </button>
-      <button matFab extended disabled>
-        <mat-icon>favorite</mat-icon>
-        Disabled
-      </button>
-      <a matFab extended routerLink=".">
-        <mat-icon>favorite</mat-icon>
-        Link
-      </a>
-    </div>
-  </div>
-</section>
+		<div class="app-sidenav-content">
+			<div class="app-content" style="padding:16px">
+				<H1>Hello World {{title()}}</H1>
+				<h2>Prof : {{nomDuProf}}</h2>
+
+				<app-assignments></app-assignments>
+			</div>
+		</div>
+	</mat-sidenav-content>
+</mat-sidenav-container>
